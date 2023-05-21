@@ -39,14 +39,4 @@ app.get("/api/byeMessage", (req, res) => {
   res.status(200).send({ Verabschiedung: byeMessage[randomBye] });
 });
 
-fetch("/api/byeMessage")
-  .then((response) => response.json())
-  .then((data) => {
-    const container = document.getElementById("data-container");
-    container.innerText = JSON.stringify(data);
-  })
-  .catch((error) => {
-    console.log("Fehler beim Abrufen der Daten:", error);
-  });
-
 module.exports = app;

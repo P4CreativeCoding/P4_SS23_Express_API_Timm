@@ -5,6 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      fetch("https://express-api-marli.vercel.app/api/byeMessage")
+        .then((response) => response.json())
+        .then((data) => {
+          const container = document.getElementById("data-container");
+          container.innerText = JSON.stringify(data);
+          console.log("Test");
+        })
+        .catch((error) => {
+          console.log("Fehler beim Abrufen der Daten:", error);
+        });
+    </script>
   </head>
   <body>
     <h1 id="data-container"></h1>
