@@ -10,7 +10,8 @@
         .then((response) => response.json())
         .then((data) => {
           const container = document.getElementById("data-container");
-          container.innerText = JSON.stringify(data);
+          const byeMessage = data.Verabschiedung;
+          container.innerText = `Verabschiedung: ${byeMessage}`;
           console.log("Test");
         })
         .catch((error) => {
